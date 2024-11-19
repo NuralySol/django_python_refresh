@@ -1,0 +1,10 @@
+<h1>{{object.title}}</h1>
+<h3>{{object.content}}</h3>
+<h3>{{object.slug}}</h3>
+{% if post.image %}
+    <img src="{{ post.image.url }}" alt="Image for {{ post.title }}">
+{% else %}
+    <p>No image available.</p>
+{% endif %}
+
+<a href="{% url 'post_list' %}"><button type="button">Go back to list</button></a>

@@ -1,0 +1,4 @@
+<h1>Blog Posts</h1>
+{% for post in oblect_list %}
+<h5><a href = {{post.get_absolute_url}}>{{post.title}}</a></h5>
+{% endfor %}
