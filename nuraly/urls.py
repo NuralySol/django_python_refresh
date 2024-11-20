@@ -22,11 +22,13 @@ from django.conf import settings
 from blog import views
 
 urlpatterns = [
-    path("", views.PostListView.as_view(), name="post_list"), 
-    path("post/<int:pk>/", views.PostDetailView.as_view(), name="post_detail"),  
-    path("hello/", views.index, name="hello"),  
-    path("admin/", admin.site.urls), 
+    path("admin/", admin.site.urls),
+    path("hello/", views.index, name="hello"),
+    path("", views.PostListView.as_view(), name="post_list"),
+    path("post/<int:pk>/", views.PostDetailView.as_view(), name="post_detail"),
+    path("post/create/", views.PostCreateView.as_view(), name="post_create"),
+    path("post/create/<int:pk>/", views.PostUpdateView.as_view(), name="post_update"),
+    path("post/delete/<int:pk>/", views.PostDeleteView.as_view(), name="post_delete"),
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-

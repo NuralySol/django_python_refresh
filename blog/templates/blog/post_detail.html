@@ -8,3 +8,5 @@
 {% endif %}
 
 <a href="{% url 'post_list' %}"><button type="button">Go back to list</button></a>
+<a href="{% url 'post_update' pk=object.id %}"><button type="button">Update Post</button></a>
+<a href="{% url 'post_delete' pk=object.id %}"><button type="button">Delete Post</button></a>
